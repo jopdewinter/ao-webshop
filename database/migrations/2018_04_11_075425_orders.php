@@ -15,9 +15,10 @@ class Orders extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->string('description');
+            $table->increments('userId');
+            $table->string('products');
             $table->string('price');
+            $table->timestamps();
         });
     }
 
@@ -28,6 +29,6 @@ class Orders extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('products');
+        Schema::dropIfExists('orders');
     }
 }
