@@ -8,6 +8,12 @@
         <title>{{config('app.name', 'ao-webshop')}}</title>
     </head>
     <body>
-        @yield('content')
+        <button onclick="location.href = '/'">home</button>
+        <button onclick="location.href = '/products'">products</button>
+        <button onclick="location.href = '/categories'">categories</button>
+        <button onclick="location.href = '/about'">about</button>
+        <div class="container">
+            @yield('content')
+        </div>
     </body>
 </html>

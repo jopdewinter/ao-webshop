@@ -12,9 +12,6 @@ class PagesController extends Controller
     }
 
     public function about() {
-        $data = array(
-            'infos' => ['phonenumber', 'email']
-        );
-        return view('pages.about')->with($data);
+        return view('pages.about');
     }
 }
