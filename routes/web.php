@@ -14,6 +14,8 @@
 Route::get('/', 'PagesController@index');
 Route::get('/about', 'PagesController@about');
 
+Route::resource('categories', 'CategoriesController');
+
 // Route::get('/users/{name}', function ($name) {
 //     return 'this is user ' . $name;
 // });

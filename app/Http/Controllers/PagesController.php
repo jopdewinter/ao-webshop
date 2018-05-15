@@ -13,7 +13,7 @@ class PagesController extends Controller
 
     public function about() {
         $data = array(
-            'info' => ['phonenumber', 'email']
+            'infos' => ['phonenumber', 'email']
         );
         return view('pages.about')->with($data);
     }
