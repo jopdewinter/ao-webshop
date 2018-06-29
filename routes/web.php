@@ -17,13 +17,10 @@ Route::get('/about', 'PagesController@about');
 Route::resource('categories', 'CategoriesController');
 Route::resource('products', 'ProductsController');
 
-// Route::get('/users/{name}', function ($name) {
-//     return 'this is user ' . $name;
-// });
 
-Auth::routes();
+Route::resource('dummy', 'DummyController');
 
-Route::get('/home', 'HomeController@index')->name('home');
-Auth::routes();
+Route::get('/cart/addToCart/{id}', 'CartController@addToCart');
 
 Route::get('/home', 'HomeController@index')->name('home');
+Auth::routes();

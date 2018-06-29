@@ -13,7 +13,18 @@
 
             </ul>
 
+            <ul>
+            <a href="/products">Products</a>
+            </ul>
+            <ul>
+            <a href="/categories">Categories</a>
+            </ul>
+            <ul>
+                <a href="/cart">Cart</a>
+            </ul>
+            <ul>
             <a href="/about">About</a>
+            </ul>
 
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ml-auto">

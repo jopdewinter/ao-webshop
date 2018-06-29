@@ -49,7 +49,8 @@ class CategoriesController extends Controller
     public function show($id)
     {
         $products = products::where('categoryId', $id)->get();
-        return view('pages.category')->with('products', $products);
+        $category = Categories::where('id', $id)->first();
+        return view('pages.category')->with(Array('products' => $products, 'category' => $category));
     }
 
     /**
@@ -72,6 +73,7 @@ class CategoriesController extends Controller
      */
     public function update(Request $request, $id)
     {
+        return "hey";
         //
     }
 

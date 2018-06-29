@@ -3,20 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Product;
-use App\Categories;
+use App\products;
+use App\cart;
 
-class ProductsController extends Controller
+class CartController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(request $request)
     {
-        $products = Product::all();
-        return view('products.products')->with('products', $products);
+        $cart = new cart($request);
     }
 
     /**
@@ -26,7 +25,7 @@ class ProductsController extends Controller
      */
     public function create()
     {
-        //
+        return "create";
     }
 
     /**
@@ -48,10 +47,7 @@ class ProductsController extends Controller
      */
     public function show($id)
     {
-        $product = Product::find($id);
-        $categoryId = $product->categoryId;
-        $category = Categories::where('id', $categoryId)->first();
-        return view('products.show')->with(['product' => $product, 'category' => $category]);
+        //
     }
 
     /**
@@ -62,7 +58,7 @@ class ProductsController extends Controller
      */
     public function edit($id)
     {
-        //
+        return "edit";
     }
 
     /**
@@ -72,9 +68,14 @@ class ProductsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update($id)
     {
-        //
+        dd('test!');
+        
+        return 'update';
+        // $cart = new cart($request);
+        // $cart->add($id);
+        // return view('products.show');
     }
 
     /**
@@ -85,6 +86,6 @@ class ProductsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        return "delete";
     }
 }
