@@ -21,7 +21,6 @@ class OrderController extends Controller
         $client = Clients::where('user_id', Auth::user()->id)->first();
         $orders = Orders::where('client_id', $client->id)->get();
 
-        // Render the web page
         return view('order.index', ['orders' => $orders]);
     }
 
@@ -33,7 +32,6 @@ class OrderController extends Controller
         $client = Clients::where('user_id', $user->id)->first();
 
         if (is_null($client)) {
-            // No client set for this user
             return redirect()->route('shoppingCartIndex');
         }
 

@@ -14,14 +14,7 @@ class ShoppingCartController extends Controller
 
         return view('shopping_cart.index', ['shoppingCart' => $shoppingCart]);
     }
-
-    /*
-     * Update a item to the shopping cart
-     *
-     * Amount 0         : Will delete the product
-     * Amount null      : Will increase the product by one or add it
-     * Amount [number]  : Will set the amount to this number
-     */
+    
     public function update(Request $request, int $productId, int $amount = null)
     {
         $shoppingCart = new ShoppingCart($request);
