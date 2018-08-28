@@ -5,12 +5,20 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Category: {{ $category->name }}</div>
+                <div class="card-header">Category: {{ $category->title }}</div>
                 <div class="card-body">
                     <div>
-                        <a href="{{ route('productView', ['id' => $products->id, 'slug' => urlencode($products->name)]) }}" class="list-group-item">
-                            <div>{{ $products->name }}</div>
-                        </a>
+                        @foreach ($category->products as $product)
+                            <a href="{{ route('productView', ['id' => $product->id, 'slug' => urlencode($product->title)]) }}" class="list-group-item">
+                                <div>{{ $product->title }}</div>
+                                <div>
+                                    Categories:
+                                    @foreach ($product->categories as $category)
+                                        {{ $category->title }},
+                                    @endforeach
+                                </div>
+                            </a>
+                        @endforeach
                     </div>
                 </div>
             </div>

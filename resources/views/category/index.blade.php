@@ -9,8 +9,8 @@
                 <div class="card-body">
                     <div class="list-group">
                     @foreach ($categories as $category)
-                        <a href="{{ route('categoryView', ['id' => $category->id, 'slug' => urlencode($category->name)]) }}" class="list-group-item">
-                            <div>{{ $category->name }}</div>
+                        <a href="{{ route('categoryView', ['id' => $category->id, 'slug' => urlencode($category->title)]) }}" class="list-group-item">
+                            <div>{{ $category->title }}</div>
                         </a>
                     @endforeach
 

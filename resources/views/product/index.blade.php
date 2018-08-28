@@ -9,13 +9,19 @@
                 <div class="card-body">
                     <div class="list-group">
                     @foreach ($products as $product)
-                        <a href="{{ route('productView', ['id' => $product->id, 'slug' => urlencode($product->name)]) }}" class="list-group-item">
-                            <div>{{ $product->name }}</div>
+                        <a href="{{ route('productView', ['id' => $product->id, 'slug' => urlencode($product->title)]) }}" class="list-group-item">
+                            <div>{{ $product->title }}</div>
+                            <div>
+                                Categories:
+                                @foreach ($product->categories as $category)
+                                    {{ $category->title }},
+                                @endforeach
+                            </div>
                         </a>
                     @endforeach
 
                     @if($products->count() == 0)
-                        There are no products found :(
+                        There are no products found. Maybe create one?
                     @endif
                     </div>
                 </div>

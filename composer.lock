@@ -1013,16 +1013,16 @@
         },
         {
             "name": "laravelcollective/html",
-            "version": "v5.6.10",
+            "version": "v5.6.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/LaravelCollective/html.git",
-                "reference": "974605fcd22a7e4d19f0b2ef635a0d1d7400387d"
+                "reference": "b3a10245c791a211e5f8ec37117f4549cd22aabe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/LaravelCollective/html/zipball/974605fcd22a7e4d19f0b2ef635a0d1d7400387d",
-                "reference": "974605fcd22a7e4d19f0b2ef635a0d1d7400387d",
+                "url": "https://api.github.com/repos/LaravelCollective/html/zipball/b3a10245c791a211e5f8ec37117f4549cd22aabe",
+                "reference": "b3a10245c791a211e5f8ec37117f4549cd22aabe",
                 "shasum": ""
             },
             "require": {
@@ -1036,7 +1036,7 @@
             "require-dev": {
                 "illuminate/database": "5.6.*",
                 "mockery/mockery": "~1.0",
-                "phpunit/phpunit": "~7.1"
+                "phpunit/phpunit": "~5.4"
             },
             "type": "library",
             "extra": {
@@ -1077,7 +1077,7 @@
             ],
             "description": "HTML and Form Builders for the Laravel Framework",
             "homepage": "https://laravelcollective.com",
-            "time": "2018-06-18T15:04:16+00:00"
+            "time": "2018-04-09T14:09:32+00:00"
         },
         {
             "name": "league/flysystem",
