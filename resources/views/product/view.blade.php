@@ -8,6 +8,12 @@
                 <div class="card-header">Product: {{ $product->title }}</div>
                 <div class="card-body">
                     <div>
+                        Description:
+                        {{ $product->description }}
+                        <br><br>
+                        Price:
+                        € {{ $product->price }}
+                        <br><br>
                         Categories:
                         @foreach ($product->categories as $category)
                             {{ $category->title }},

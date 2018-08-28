@@ -13,10 +13,6 @@
                             <div>{{ $category->title }}</div>
                         </a>
                     @endforeach
-
-                    @if($category->count() == 0)
-                        There are no products found. Maybe create one?
-                    @endif
                     </div>
                 </div>
             </div>

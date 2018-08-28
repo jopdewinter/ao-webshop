@@ -15,7 +15,6 @@ class ShoppingCart
     {
         $this->request = $request;
 
-        // Check if there is already a shopping cart, if not create one
         if ($request->session()->has('shoppingCart')) {
             $shoppingCart = $request->session()->get('shoppingCart');
 
@@ -25,21 +24,11 @@ class ShoppingCart
         }
     }
 
-    /*
-     * Update a item to the shopping cart
-     *
-     * Amount 0         : Will delete the product
-     * Amount null      : Will increase the product by one or add it
-     * Amount [number]  : Will set the amount to this number
-     */
     public function updateProduct(Product $product, int $amount = null)
     {
-        // Check if product is in the shopping cart
         if (($key = $this->searchShoppingCart($this->products, $product->id)) !== null) {
-            // Check if there is a amount given and set it, otherwise increase amount by one
             isset($amount) ? $this->products[$key]->amount = $amount : $this->products[$key]->amount++;
-        } else { // Product is not in shopping cart, add it
-            // Check if there is a amount given and set it, otherwise set to 1
+        } else {
             isset($amount) ? $product->amount = $amount : $product->amount = 1;
 
             array_push($this->products, $product);
