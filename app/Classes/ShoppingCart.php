@@ -36,7 +36,6 @@ class ShoppingCart
             $key = key($this->products);
         }
 
-        // Check if product amount is 0, then unset it
         if ($this->products[$key]->amount === 0) {
             unset($this->products[$key]);
         }
